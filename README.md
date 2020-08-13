@@ -37,10 +37,8 @@ Things you may want to cover:
 | family_name     | string | null: false |
 | first_name_kana | string | null: false |
 | family_name_kana| string | null: false |
-| birth_year      | date   | null: false |
-| birth_month     | date   | null: false |
-| birth_day       | date   | null: false |
-### Association
+| birth_day       |timestmp| null: false |
+
 
 - has_many :items, dependent::destroy #一緒に消える
 - has_one :shipping_address, dependent::destroy
@@ -70,16 +68,14 @@ Things you may want to cover:
 
 - belongs_to :user
 
-##  Credit_cardテーブル
+##  Purchaseテーブル
 
 | Column          | Type       | Options              |
 | --------------  | ---------- | -------------------- |
-| card_number     | integer    | null: false          |
-| expiration_year | integer    | null: false          |
-| expiration_month| integer    | null: false          |
-| security_code   | integer    | null: false          |
-| user_id         | references | null: false          |
-|                 |              foreign_key: true
+| item            |references  | foreign_key: true    |
+| user            |references  | foreign_key: true    |
+
+
 
 ### Association
 
@@ -92,9 +88,9 @@ Things you may want to cover:
 | postal_code | string     | null: false           |
 | prefecture  | references | null: false           |
 |             |              foreign_key: true     |
-| city        | integer    | null: false           |
-| adress      | integer    | null: false           |
-|bilding_name | integer    | null: false           |
+| city        | syring     | null: false           |
+| adress      | string     | null: false           |
+|bilding_name | string     | null: false           |
 |phone_number | string     | null: false           |
 |user_id      | references | null: false           |
 |             |              foreign_key: true     |
