@@ -41,7 +41,7 @@ Things you may want to cover:
 
 
 - has_many :items, dependent::destroy #一緒に消える
-- has_one :purchase
+- has_many :purchase
 
 ##  Itemsテーブル
 
@@ -84,15 +84,15 @@ Things you may want to cover:
 
 ## Shipping_adress テーブル
 
-| Column      | Type       | Options               |
-| ----------- | ---------- | --------------------- |
-| postal_code | string     | null: false           |
-| prefecture  | integer    | null: false           |
-| city        | syring     | null: false           |
-| adress      | string     | null: false           |
-|building_name| string     |                       |
-|phone_number | string     | null: false           |
-| purchase    | references | foreign_key :true     |
+| Column       | Type       | Options               |
+| -----------  | ---------- | --------------------- |
+| postal_code  | string     | null: false           |
+| prefecture   | integer    | null: false           |
+| city         | string     | null: false           |
+| adress       | string     | null: false           |
+| building_name| string     |                       |
+| phone_number | string     | null: false           |
+| purchase     | references | foreign_key :true     |
 
 ### Association
 
