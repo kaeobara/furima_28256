@@ -30,9 +30,9 @@ Things you may want to cover:
 | --------------- | ------ | ----------- |
 | nickname        | string | null: false |
 | email           | string | null: false |
-                           |unique: true |#重複を防ぐ
-                           |index: true  |#外部キー
-| password        | integer| null: false |
+|                 |        |unique: true |#重複を防ぐ
+|                 |        |index: true  |#外部キー
+| password        | string | null: false |
 | first_name      | string | null: false |
 | family_name     | string | null: false |
 | first_name_kana | string | null: false |
@@ -47,20 +47,20 @@ Things you may want to cover:
 
 | Column            | Type      | Options          |
 | ----------------- | --------- | -----------      |
-| item_image_id     | references| null: false      |
-|                   |             foreign_key:true |
+| item_image_id     | string    | null: false      |
 | name              | string    | null: false      |
 | introduction      | text      | null: false      |
 | category_id       | integer   | null: false      |
-|                   |             foreign_key:true |
+|                   |           | foreign_key:true |
 | item_condition_id | integer   | null: false      |
-|                   |             foreign_key:true |
+|                   |           | foreign_key:true |
 | postage_payer_id  | integer   | null: false      |
-|                   |             foreign_key:true |
+|                   |           | foreign_key:true |
 | shipping_region_id| integer   | null: false      |
 | shipping_days_id  | integer   | null: false      |
-|                   |             foreign_key:true |
+|                   |           | foreign_key:true |
 | price             | integer   | null: false      |
+| user              | references| foreign_key :true|
 
 ### Association
 
@@ -88,12 +88,11 @@ Things you may want to cover:
 | ----------- | ---------- | --------------------- |
 | postal_code | string     | null: false           |
 | prefecture  | integer    | null: false           |
-|             |              foreign_key: true     |
 | city        | syring     | null: false           |
 | adress      | string     | null: false           |
 |building_name| string     |                       |
-|phone_number | integer    | null: false           |
-| purchase_id | references | foreign_key :true     |
+|phone_number | string     | null: false           |
+| purchase    | references | foreign_key :true     |
 
 ### Association
 
