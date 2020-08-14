@@ -41,9 +41,7 @@ Things you may want to cover:
 
 
 - has_many :items, dependent::destroy #一緒に消える
-- has_one :shipping_address, dependent::destroy
-- has_one :credit_card, dependent::destroy
-- 
+- has_one :purchase
 
 ##  Itemsテーブル
 
@@ -82,7 +80,7 @@ Things you may want to cover:
 
 - belongs_to :user
 - belongs_to :item
-- belongs_to :shipping_adress
+- has_one :shipping_adress
 
 ## Shipping_adress テーブル
 
@@ -93,12 +91,10 @@ Things you may want to cover:
 |             |              foreign_key: true     |
 | city        | syring     | null: false           |
 | adress      | string     | null: false           |
-|bilding_name | string     |                       |
+|building_name| string     |                       |
 |phone_number | integer    | null: false           |
-|user_id      | references | null: false           |
-|             |              foreign_key: true     |
+| purchase_id | references | foreign_key :true     |
 
 ### Association
 
-- belongs_to :user
 - belongs_to :purchase
